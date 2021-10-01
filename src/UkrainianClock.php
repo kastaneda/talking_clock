@@ -115,13 +115,13 @@ class UkrainianClock
         return $result;
     }
 
-    public function convert(): array
+    public function getClock(): array
     {
         return [...$this->getHours(), ...$this->getMinutes()];
     }
 
     public function __toString(): string
     {
-        return join(' ', $this->convert());
+        return join(' ', $this->getClock());
     }
 }
