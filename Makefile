@@ -2,8 +2,7 @@
 test: vendor/bin/phpunit
 	php vendor/bin/phpunit
 
-.PHONY: install
-install: composer.phar
+vendor/bin/phpunit: composer.phar
 	php composer.phar install
 
 composer.phar:
