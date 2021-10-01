@@ -23,4 +23,3 @@ final class UkrainianClockTest extends TestCase
         ];
     }
 }
-
