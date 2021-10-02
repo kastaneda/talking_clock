@@ -19,10 +19,12 @@ Text below in Ukrainian.
 
 ### Системні вимоги
 
- * __GNU Make__ (Встановлення для Debian: `sudo apt install make`)
- * __PHP 8__ (Встановлення для Debian: `sudo apt install php8.0-cli`)
- * __ffmpeg__ (Встановлення для Debian: `sudo apt install ffmpeg`)
- * __aplay__ (Встановлення для Debian: `sudo apt install alsa-utils`)
+ * GNU Make
+ * PHP 8
+ * ffmpeg
+ * aplay
+
+Для Debian: `sudo apt install make php8.0-cli ffmpeg alsa-utils`
 
 ## Як запустити
 
