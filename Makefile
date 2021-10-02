@@ -1,3 +1,7 @@
+.PHONY: all
+all:
+	$(MAKE) -C data
+
 .PHONY: test
 test: vendor/bin/phpunit
 	php vendor/bin/phpunit
