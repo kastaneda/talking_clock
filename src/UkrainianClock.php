@@ -3,7 +3,7 @@
 class UkrainianClock
 {
     // Кількісні числівники жіночого роду
-    const CARDINAL_NUMERALS = [
+    public const CARDINAL_NUMERALS = [
         0 => 'нуль',
         1 => 'одна',
         2 => 'дві',
@@ -31,7 +31,7 @@ class UkrainianClock
     ];
 
     // Порядкові числівники жіночого роду
-    const ORDINAL_NUMERALS = [
+    public const ORDINAL_NUMERALS = [
         1 => 'перша',
         2 => 'друга',
         3 => 'третя',
@@ -54,12 +54,12 @@ class UkrainianClock
         20 => 'двадцята',
     ];
 
-    const HOURS = 'година';
-    const HOUR_ZERO = 'годин';
+    public const HOURS = 'година';
+    public const HOUR_ZERO = 'годин';
 
-    const MINUTES = 'хвилин';
-    const MINUTE_ONE = 'хвилина';
-    const MINUTE_TWO = 'хвилини';
+    public const MINUTES = 'хвилин';
+    public const MINUTE_ONE = 'хвилина';
+    public const MINUTE_TWO = 'хвилини';
 
     public function __construct(
         protected \DateTimeInterface $dt,

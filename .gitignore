@@ -3,3 +3,4 @@ composer.lock
 composer.phar
 .phpunit.result.cache
 data/*.wav
+.php-cs-fixer.cache
