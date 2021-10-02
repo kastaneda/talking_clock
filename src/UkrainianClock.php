@@ -63,7 +63,8 @@ class UkrainianClock
 
     public function __construct(
         protected \DateTimeInterface $dt,
-    ) {}
+    ) {
+    }
 
     public function getHours(): array
     {
