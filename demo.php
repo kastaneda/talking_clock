@@ -6,7 +6,8 @@ require 'src/WordFiles.php';
 $clock = new UkrainianClock(new DateTime());
 echo $clock . PHP_EOL;
 
-$tts = new WordFiles('data', 'words.json');
+$dict = json_decode(file_get_contents('data/words.json'), true);
+$tts = new WordFiles($dict, 'data');
 $files = $tts->getFiles($clock->getClock());
 
 $code = 'aplay -q ' . join(' ', $files);

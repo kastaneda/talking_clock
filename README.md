@@ -1,9 +1,9 @@
 ```
-              ______     ____    _             _______         __  
+              ______     ____    _             _______         __
              /_  __/__ _/ / /__ (_)__  ___ _  / ___/ /__  ____/ /__
               / / / _ `/ /  '_// / _ \/ _ `/ / /__/ / _ \/ __/  '_/
-             /_/  \_,_/_/_/\_\/_/_//_/\_, /  \___/_/\___/\__/_/\_\ 
-                                     /___/                         
+             /_/  \_,_/_/_/\_\/_/_//_/\_, /  \___/_/\___/\__/_/\_\
+                                     /___/
 ```
 
 This is simple talking clock, it can say current time in Ukrainian.
@@ -20,7 +20,7 @@ Text below in Ukrainian.
 ### Системні вимоги
 
  * GNU Make
- * PHP 8
+ * PHP 7.4
  * ffmpeg
  * aplay
 
@@ -31,11 +31,11 @@ Text below in Ukrainian.
 Просто запустіть `./demo.php` (або `php demo.php`). Має вийти щось таке:
 
 ```
-gray@carmilhan:~/dev/talking_clock$ ./demo.php 
+gray@carmilhan:~/dev/talking_clock$ ./demo.php
 десята година вісім хвилин
 aplay -q data/ordinal_10.wav data/hour.wav data/cardinal_8.wav data/minutes.wav
 
-gray@carmilhan:~/dev/talking_clock$ ./demo.php 
+gray@carmilhan:~/dev/talking_clock$ ./demo.php
 десята година дев'ять хвилин
 aplay -q data/ordinal_10.wav data/hour.wav data/cardinal_9.wav data/minutes.wav
 ```
@@ -53,3 +53,4 @@ aplay -q data/ordinal_10.wav data/hour.wav data/cardinal_9.wav data/minutes.wav
 
  * Додати назви місяців та днів тижнів
  * Додати можливість озвучити інформацію про погоду
+

@@ -61,9 +61,11 @@ class UkrainianClock
     public const MINUTE_ONE = 'хвилина';
     public const MINUTE_TWO = 'хвилини';
 
-    public function __construct(
-        protected \DateTimeInterface $dt,
-    ) {
+    protected \DateTimeInterface $dt;
+
+    public function __construct(\DateTimeInterface $dt)
+    {
+        $this->dt = $dt;
     }
 
     public function getHours(): array

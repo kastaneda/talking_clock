@@ -2,19 +2,18 @@
 
 class WordFiles
 {
-    protected $dict;
+    protected array $dict;
+    protected string $dirPrefix = '';
 
-    public function __construct(
-        protected string $dir,
-        protected string $dictFile,
-    ) {
-        $json = file_get_contents($dir . '/' . $dictFile);
-        $this->dict = json_decode($json, true);
+    public function __construct(array $dict, string $dir = '')
+    {
+        $this->dict = $dict;
+        $this->dirPrefix = $dir ? ($dir . '/') : '';
     }
 
     public function getFile(string $word): string
     {
-        return $this->dir . '/' . $this->dict[$word];
+        return $this->dirPrefix . $this->dict[$word];
     }
 
     public function getFiles(array $words): array
