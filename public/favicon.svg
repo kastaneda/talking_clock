@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+<svg viewBox="0 0 100 100" width="200" height="200" version="1.1" xmlns="http://www.w3.org/2000/svg">
+  <style>
+    .bg { fill: #aaa }
+    .fg { fill: #000 }
+    .p { fill: transparent; stroke: #000; stroke-width: 3 }
+    @media (prefers-color-scheme: dark) {
+      .bg { fill: #666 }
+      .fg { fill: #fff }
+      .p { fill: transparent; stroke: #fff }
+    }
+  </style>
+  <circle class="bg" cx="50" cy="50" r="45" />
+  <circle class="fg" cx="50" cy="15" r="2.5" />
+  <circle class="fg" cx="67.5" cy="19.7" r="2.5" />
+  <circle class="fg" cx="80.3" cy="32.5" r="2.5" />
+  <circle class="fg" cx="85" cy="50" r="2.5" />
+  <circle class="fg" cx="80.3" cy="67.5" r="2.5" />
+  <circle class="fg" cx="67.5" cy="80.3" r="2.5" />
+  <circle class="fg" cx="50" cy="85" r="2.5" />
+  <circle class="fg" cx="32.5" cy="80.3" r="2.5" />
+  <circle class="fg" cx="19.7" cy="67.5" r="2.5" />
+  <circle class="fg" cx="15" cy="50" r="2.5" />
+  <circle class="fg" cx="19.7" cy="32.5" r="2.5" />
+  <circle class="fg" cx="32.5" cy="19.7" r="2.5" />
+  <!-- path class="p" d="M 50 22.5 L 50 50 L 67.5 50" / -->
+  <path class="p" d="M 33.617 38.528 L 50 50 L 72.725 36.875" />
+</svg>
