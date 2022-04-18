@@ -1,5 +1,6 @@
 #!/usr/bin/env php
 <?php
+
 require 'src/UkrainianClock.php';
 require 'src/WordFiles.php';
 

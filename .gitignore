@@ -3,4 +3,6 @@ composer.lock
 composer.phar
 .phpunit.result.cache
 data/*.wav
+public/favicon.ico
+public/apple-touch-icon.png
 .php-cs-fixer.cache
