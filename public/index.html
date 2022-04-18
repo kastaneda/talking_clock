@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="uk">
+  <head>
+    <meta charset="UTF-8">
+    <title>Котра година?</title>
+    <style>
+      html, body { height: 100%; margin: 0 }
+      body { display: grid; place-items: center }
+      .src { position: fixed; right: 1em; bottom: .25em }
+    </style>
+  </head>
+  <body>
+    <audio controls preload="none">
+      <source src="clock.php?type=ogg" type="audio/ogg">
+      <source src="clock.php" type="audio/wav">
+      <p>
+        Ваш браузер не підтримує HTML5 <code>&lt;audio&gt;</code>,
+        але ви можете спробувати відкрити аудіо
+        за <a href="clock.php">прямим посиланням</a>.
+      </p>
+    </audio>
+    <p class="src">
+      <a href="https://github.com/kastaneda/talking_clock">©</a>
+    </p>
+  </body>
+</html>
