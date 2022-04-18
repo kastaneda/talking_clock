@@ -7,6 +7,12 @@ all:
 test: vendor/bin/phpunit
 	php vendor/bin/phpunit
 
+.PHONY: package
+package: talking-clock.de.co.ua.tar.gz
+
+talking-clock.de.co.ua.tar.gz:
+	tar zcf $@ src/ data/*.wav public/*.*
+
 .PHONY: cs-check
 cs-check: vendor/bin/php-cs-fixer
 	php vendor/bin/php-cs-fixer fix --dry-run --diff .
