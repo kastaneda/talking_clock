@@ -10,17 +10,30 @@
     </style>
   </head>
   <body>
-    <audio controls preload="none">
-      <source src="clock.php?type=ogg" type="audio/ogg">
-      <source src="clock.php" type="audio/wav">
-      <p>
-        Ваш браузер не підтримує HTML5 <code>&lt;audio&gt;</code>,
-        але ви можете спробувати відкрити аудіо
-        за <a href="clock.php">прямим посиланням</a>.
-      </p>
-    </audio>
+    <div id="box">
+      <audio controls preload="none">
+        <source src="clock.php?type=ogg&nocache=X" type="audio/ogg; codecs=vorbis">
+        <source src="clock.php?type=wav&nocache=X" type="audio/wav">
+        <p>
+          Ваш браузер не підтримує HTML5 <code>&lt;audio&gt;</code>,
+          але ви можете спробувати відкрити аудіо
+          за <a href="clock.php">прямим посиланням</a>.
+        </p>
+      </audio>
+    </div>
     <p class="src">
       <a href="https://github.com/kastaneda/talking_clock">©</a>
     </p>
+    <script>
+      document.addEventListener('DOMContentLoaded', function(event) {
+        var boxHTML = document.getElementById('box').innerHTML;
+        function updateNoCache() {
+          var nc = 'nocache=' + (new Date).getTime();
+          document.getElementById('box').innerHTML = boxHTML.replace(/nocache=X/g, nc);
+          document.querySelector('audio').addEventListener('ended', updateNoCache);
+        }
+        updateNoCache();
+      });
+    </script>
   </body>
 </html>
