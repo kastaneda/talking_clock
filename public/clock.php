@@ -4,7 +4,17 @@ define('APP_ROOT', dirname(__DIR__));
 require APP_ROOT . '/src/UkrainianClock.php';
 require APP_ROOT . '/src/WordFiles.php';
 
-$clock = new UkrainianClock(new DateTime());
+$tz = new DateTimeZone('Europe/Kiev'); // Kyiv, not Kiev!
+try {
+    if (isset($_GET['tzoffset'])) {
+        $tzOffset = (int) $_GET['tzoffset'];
+        $tz = new DateTimeZone(sprintf('%s%02d%02d',
+            $tzOffset < 0 ? '+' : '-', 
+            (int) -$tzOffset / 60, -$tzOffset % 60));
+    }
+} catch (Exception $e) {}
+
+$clock = new UkrainianClock(new DateTime('now', $tz));
 
 $dict = json_decode(file_get_contents(APP_ROOT . '/data/words.json'), true);
 $tts = new WordFiles($dict, APP_ROOT . '/data');
