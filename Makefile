@@ -11,7 +11,7 @@ test: vendor/bin/phpunit
 package: talking-clock.de.co.ua.tar.gz
 
 talking-clock.de.co.ua.tar.gz:
-	tar zcf $@ src/ data/*.wav public/*.*
+	tar zcf $@ src/ data/*.wav data/*.json public/*.*
 
 .PHONY: cs-check
 cs-check: vendor/bin/php-cs-fixer
