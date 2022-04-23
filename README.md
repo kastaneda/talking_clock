@@ -40,6 +40,13 @@ gray@carmilhan:~/dev/talking_clock$ ./demo.php
 aplay -q data/ordinal_10.wav data/hour.wav data/cardinal_9.wav data/minutes.wav
 ```
 
+## Веб-інтерфейс
+
+Ще простіше зайти на <https://talking-clock.de.co.ua> і послухати.
+
+Для роботи веб-інтерфейса додатково потрібен SoX.
+Встановлення: `sudo apt install sox`
+
 ## Як це працює
 
 Спочатку будується речення українською, потім запускається програвач
@@ -53,4 +60,3 @@ aplay -q data/ordinal_10.wav data/hour.wav data/cardinal_9.wav data/minutes.wav
 
  * Додати назви місяців та днів тижнів
  * Додати можливість озвучити інформацію про погоду
-
