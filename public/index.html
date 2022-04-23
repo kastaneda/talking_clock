@@ -2,6 +2,7 @@
 <html lang="uk">
   <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Котра година?</title>
     <style>
       html, body { height: 100%; margin: 0 }
@@ -9,28 +10,35 @@
       .src { position: fixed; right: 1em; bottom: .25em }
     </style>
     <link rel="icon" href="favicon.svg" type="image/svg+xml">
-  </head>
   <body>
     <div id="box">
-      <audio controls preload="none">
-        <source src="clock.php?type=ogg&nocache=X" type="audio/ogg; codecs=vorbis">
-        <source src="clock.php?type=wav&nocache=X" type="audio/wav">
-        <p>
-          Ваш браузер не підтримує HTML5 <code>&lt;audio&gt;</code>,
-          але ви можете спробувати відкрити аудіо
-          за <a href="clock.php">прямим посиланням</a>.
-        </p>
-      </audio>
+      <noscript>
+        <audio controls preload="none">
+          <source src="clock.php?type=ogg" type="audio/ogg; codecs=vorbis">
+          <source src="clock.php" type="audio/wav">
+          <p>
+            Ваш браузер не підтримує HTML5 <code>&lt;audio&gt;</code>,
+            але ви можете спробувати відкрити аудіо
+            за <a href="clock.php">прямим посиланням</a>.
+          </p>
+        </audio>
+      </noscript>
     </div>
     <p class="src">
       <a href="https://github.com/kastaneda/talking_clock">©</a>
     </p>
     <script>
       document.addEventListener('DOMContentLoaded', function(event) {
-        var boxHTML = document.getElementById('box').innerHTML;
-        function updateNoCache() {
-          var nc = 'nocache=' + (new Date).getTime();
-          document.getElementById('box').innerHTML = boxHTML.replace(/nocache=X/g, nc);
+        var tzOffset = (new Date).getTimezoneOffset();
+        var updateNoCache = function() {
+          var noCache = (new Date).getTime();
+          var src1 = 'type=ogg&tzoffset=' + tzOffset + '&nocache=' + noCache;
+          var src2 = 'tzoffset=' + tzOffset + '&nocache=' + noCache;
+          var boxHTML = '<audio controls preload="none">' +
+            '<source src="clock.php?' + src1 + '" type="audio/ogg; codecs=vorbis">' +
+            '<source src="clock.php?' + src2 + '" type="audio/wav">' +
+            '</audio>';
+          document.getElementById('box').innerHTML = boxHTML;
           document.querySelector('audio').addEventListener('ended', updateNoCache);
         }
         updateNoCache();
