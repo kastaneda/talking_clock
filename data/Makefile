@@ -1,7 +1,7 @@
 # lame -m m --abr 32 try_3.wav clock.mp3
 
 # PARAM = -filter:a "volume=15dB"
-PARAM = -filter:a loudnorm -ar 19200
+PARAM = -filter:a loudnorm -ar 19200 -bitexact
 
 .PHONY: all
 all: cardinal_0.wav \

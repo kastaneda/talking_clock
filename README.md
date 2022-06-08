@@ -44,9 +44,6 @@ aplay -q data/ordinal_10.wav data/hour.wav data/cardinal_9.wav data/minutes.wav
 
 Ще простіше зайти на <https://talking-clock.de.co.ua> і послухати.
 
-Для роботи веб-інтерфейса додатково потрібен SoX.
-Встановлення: `sudo apt install sox`
-
 ## Як це працює
 
 Спочатку будується речення українською, потім запускається програвач
