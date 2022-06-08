@@ -16,7 +16,6 @@
     <div id="box">
       <noscript>
         <audio controls preload="none">
-          <source src="clock.php?type=ogg" type="audio/ogg; codecs=vorbis">
           <source src="clock.php" type="audio/wav">
           <p>
             Ваш браузер не підтримує HTML5 <code>&lt;audio&gt;</code>,
@@ -34,11 +33,9 @@
         var tzOffset = (new Date).getTimezoneOffset();
         var updateNoCache = function() {
           var noCache = (new Date).getTime();
-          var src1 = 'type=ogg&tzoffset=' + tzOffset + '&nocache=' + noCache;
-          var src2 = 'tzoffset=' + tzOffset + '&nocache=' + noCache;
+          var args = 'tzoffset=' + tzOffset + '&nocache=' + noCache;
           var boxHTML = '<audio controls preload="none">' +
-            '<source src="clock.php?' + src1 + '" type="audio/ogg; codecs=vorbis">' +
-            '<source src="clock.php?' + src2 + '" type="audio/wav">' +
+            '<source src="clock.php?' + args + '" type="audio/wav">' +
             '</audio>';
           document.getElementById('box').innerHTML = boxHTML;
           document.querySelector('audio').addEventListener('ended', updateNoCache);
