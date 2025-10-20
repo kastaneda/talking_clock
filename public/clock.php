@@ -4,7 +4,7 @@ define('APP_ROOT', dirname(__DIR__));
 require APP_ROOT . '/src/UkrainianClock.php';
 require APP_ROOT . '/src/WordFiles.php';
 
-$tz = new DateTimeZone('Europe/Kiev'); // Kyiv, not Kiev!
+$tz = new DateTimeZone('Europe/Kyiv');
 try {
     if (isset($_GET['tzoffset'])) {
         $tzOffset = (int) $_GET['tzoffset'];
